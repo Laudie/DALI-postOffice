@@ -43,15 +43,15 @@ Nell'altra schermata abbiamo active_user_wi.pl da dove parte l'esecuzione dopo l
 
 
 ## Sequence Diagram
+Di seguito si mostra il flusso degli eventi tra gli agenti
 
 ![Sequence diagram](https://user-images.githubusercontent.com/38522985/180879135-66fa0150-8afd-4e61-92eb-986162bb6e0b.svg)
 
 ## Eventi/azioni
 
-Events/action
-
 <ul>
 Biglietteria:
+
 <li>distribuisci_bigliettiE(Elem1, Elem2, Elem3, Elem4, Elem5, Elem6) 
 evento esterno chiamato dall’utente. La Biglietteria salva tutti gli elementi in una lista tramite assert e inizia a svegliare tutti gli agenti mandando un messaggio sveglia con Id e un elemento della lista_biglietto.
 
