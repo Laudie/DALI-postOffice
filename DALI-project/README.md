@@ -7,12 +7,12 @@ Il progetto è volto a gestire la coda negli uffici postali.
 
 Per scaricare e installare SICStus Prolog (è necessario), seguire le istruzioni al link https://sicstus.sics.se/download4.html.
 Adesso è possibile clonare il repository ed eseguire il comando per far partire il programma:
-git clone https://github.com/Laudie/DALI-postOffice/
-cd DALI-project/application/
-bash startmas.sh
 
-     Le finestre che si apriranno:
+     git clone https://github.com/Laudie/DALI-postOffice/
+     cd DALI-project/application/
+     bash startmas.sh
 
+Le finestre che si apriranno:
      Prolog LINDA server (active_server_wi.pl)
      Prolog FIPA client (active_user_wi.pl)
      1 instanza di DALI per ogni agente (active_dali_wi.pl)
