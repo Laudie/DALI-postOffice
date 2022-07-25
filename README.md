@@ -37,6 +37,8 @@ All'inizio si esegue il comando send_message(distribuisci_biglietti(e1,e2,e3,e4,
 Nella prima schermata si vedono i 6 agenti. In particolare agentCliente1, agentCliente2 e agentCliente3 hanno come operazione Spedizione e saranno quindi gestiti dall'agente agentSpedizione. Dall'altra parte agentiCliente4,agentCliente5 e agentCliente6 saranno gestiti dall'agentOperazioniVarie. Ogni agente stampa un messaggio per far sapere cosa sta facendo e per avvisare quando l'operazione è terminata.
 Nell'altra schermata abbiamo active_user_wi.pl da dove parte l'esecuzione dopo l'invio di un messaggio all'agentBiglietteria. L'agentBiglietteria stampa i biglietti assegnati ai clienti con il loro id e sveglia tutti i clienti. Gli agentOperazioniVarie e agentSpedizione gestiscono i clienti in fila e stampano dei messaggi per avvisare chi è il prossimo cliente ad entrare.
 
+Nell'esempio per le spedizioni sono stati gestiti i clienti secondo l'ordine agentCliente2 con biglietto numero 2, agentCliente1 con biglietto numero 5 e agentCliente3 con biglietto numero 9. Per le operazioni varie sono stati gestiti i clienti secondo l'ordine agentCliente6 con biglietto numero 1, agentCliente5 con biglietto numero 6 e agentCliente4 con biglietto numero 8
+
 <img width="1437" alt="Schermata 2022-07-25 alle 15 03 39" src="https://user-images.githubusercontent.com/38522985/180869354-b22d5d5d-c7ca-4b03-b659-ceecc764d6d9.png">
 
 <img width="977" alt="Schermata 2022-07-25 alle 15 02 40" src="https://user-images.githubusercontent.com/38522985/180869323-9f37ea85-f3f1-4441-8ff5-345665218d5e.png">
