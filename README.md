@@ -53,19 +53,22 @@ Events/action
 <ul>
 Biglietteria:
 <li>distribuisci_bigliettiE(Elem1, Elem2, Elem3, Elem4, Elem5, Elem6) 
-evento esterno chiamato dall’utente. La Biglietteria salva tutti gli elementi in una lista tramite assert e inizia a svegliare tutti gli agenti mandando un messaggio sveglia con Id e un elemento della lista_biglietto.<\li>
-
+evento esterno chiamato dall’utente. La Biglietteria salva tutti gli elementi in una lista tramite assert e inizia a svegliare tutti gli agenti mandando un messaggio sveglia con Id e un elemento della lista_biglietto.
+<li>
+<ul>
+<ul>
 Cliente:
-<li>svegliaE(Id,Biglietto) evento esterno fatto partire dalla biglietteria. Qui il cliente salva le informazioni del biglietto tramite operazione assert e fa l’azione messageOperatoreA una sola volta. <\li>
-messageOperatoreA in questa azione il cliente prende le info del suo biglietto e manda un messaggio all’agente Spedizione o OperazioniVarie per chiede di poter fare l’operazione. <\li>
-<li>fai_operazioneE evento esterno che riceve il cliente quando l’agente Spedizione o OperazioniVarie concede di fargli fare l’operazione. Il cliente stamperà un messaggio indicando cosa sta facendo e una volta terminato farà l’azione operazione_terminataA. <\li>
-<li>operazione_terminataA in questa azione il cliente manda un messaggio all’agente Spedizione o OperazioniVarie per avvisare di aver terminato. A questo punto elimina le informazioni del suo biglietto tramite retract<\li>
-
+<li>svegliaE(Id,Biglietto) evento esterno fatto partire dalla biglietteria. Qui il cliente salva le informazioni del biglietto tramite operazione assert e fa l’azione messageOperatoreA una sola volta. <li>
+<li>messageOperatoreA in questa azione il cliente prende le info del suo biglietto e manda un messaggio all’agente Spedizione o OperazioniVarie per chiede di poter fare l’operazione. <li>
+<li>fai_operazioneE evento esterno che riceve il cliente quando l’agente Spedizione o OperazioniVarie concede di fargli fare l’operazione. Il cliente stamperà un messaggio indicando cosa sta facendo e una volta terminato farà l’azione operazione_terminataA. <li>
+<li>operazione_terminataA in questa azione il cliente manda un messaggio all’agente Spedizione o OperazioniVarie per avvisare di aver terminato. A questo punto elimina le informazioni del suo biglietto tramite retract <li>
+<ul>
+<ul>
 Spedizione e OperazioniVarie:
 <li>inizializza il suo stato di operatore_libero a true tramite assert<\li>
-<li>chiedo_di_fare_operazioneE(Id,Biglietto) riceve la richiesta da parte del cliente. In questo caso salva la prenotazione del cliente con Id, Biglietto e Timestamp <\li>
-<li>operatore_liberoI se c’è qualcuno in fila in questo caso fa l’azione elabora_filaA <\li>
-<li>elabora_filaA prende il cliente prenotato e si chiede se c’è un altro cliente prenotato con un numero minore, se così fosse da la precedenza a quest’ultimo altrimenti no. A questo punto concede l’operazione attraverso l’azione concedi_operazioneA(Id) <\li>
-<li>concedi_operazioneA(Id) manda un messaggio fai_operazione al cliente con l’Id in input <\li>
-<li>termino_operazioneE evento esterno mandato dal cliente che lo avvisa di aver terminato l’operazione. in questo caso l’agente Spedizione o OperazioniVarie può impostare il proprio stato di operatore_libero da false a true e può ‘dimenticarsi’ del cliente andando ad eliminare le informazioni del cliente_prenotato tramite retract.<\li>
-<\ul>
+<li>chiedo_di_fare_operazioneE(Id,Biglietto) riceve la richiesta da parte del cliente. In questo caso salva la prenotazione del cliente con Id, Biglietto e Timestamp <li>
+<li>operatore_liberoI se c’è qualcuno in fila in questo caso fa l’azione elabora_filaA <li>
+<li>elabora_filaA prende il cliente prenotato e si chiede se c’è un altro cliente prenotato con un numero minore, se così fosse da la precedenza a quest’ultimo altrimenti no. A questo punto concede l’operazione attraverso l’azione concedi_operazioneA(Id) <li>
+<li>concedi_operazioneA(Id) manda un messaggio fai_operazione al cliente con l’Id in input <li>
+<li>termino_operazioneE evento esterno mandato dal cliente che lo avvisa di aver terminato l’operazione. in questo caso l’agente Spedizione o OperazioniVarie può impostare il proprio stato di operatore_libero da false a true e può ‘dimenticarsi’ del cliente andando ad eliminare le informazioni del cliente_prenotato tramite retract.<li>
+<ul>
