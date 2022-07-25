@@ -1,0 +1,3 @@
+send_message(send_message(arriva_ospedale,_342063))
+send_message(send_message(arriva_paziente(2,3),_372061))
+send_message(send_message(termina_visita(2),_342031))

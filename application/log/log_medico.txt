@@ -1,0 +1,6 @@
+send_message(send_message(visita_paziente,_184147))
+send_message(send_message(visita_finita,_143945))
+send_message(send_message(visita_paziente,_175035))
+send_message(send_message(visita_finita,_182867))
+send_message(send_message(visita_paziente,_172061))
+send_message(send_message(visita_finita,_182867))

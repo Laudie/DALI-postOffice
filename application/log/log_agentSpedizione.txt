@@ -1,0 +1,3 @@
+send_message(send_message(fai_operazione,_166659))
+send_message(send_message(fai_operazione,_165093))
+send_message(send_message(fai_operazione,_166933))

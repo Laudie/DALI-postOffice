@@ -1,0 +1,42 @@
+:- dynamic(operatore_libero/1).
+:- dynamic(cliente_prenotato/3).
+:- use_module(library(aggregate)).
+:- use_module(library(lists)).
+
+:- write('Sono operatore per le operazioni varie').
+:- assert(operatore_libero(true)).
+
+chiedo_di_fare_operazioneE(Id,Biglietto) :> now(Timestamp), assert(cliente_prenotato(Id,Biglietto,Timestamp)).
+
+operatore_libero :- write('').
+
+operatore_liberoI :- operatore_libero(X), true == X, 
+cliente_prenotato(Id, Biglietto, Timestamp), 
+elabora_filaA.
+
+/* seleziono il cliente successivo */
+elabora_filaA:-
+    write('Operatore sta gestendo la fila...'), nl,
+
+    cliente_prenotato(_,Xp,_),
+    not((cliente_prenotato(_,Xp2,_), Xp2<Xp)),
+    cliente_prenotato(Id,Xp,Xt),
+    not((cliente_prenotato(_,Xp,Xt2), Xt2<Xt)),
+
+    format('Cliente successivo: ~d', Id), nl,
+    retract(operatore_libero(true)),
+    assertz(operatore_libero(false)),
+    concedi_operazioneA(Id).
+
+concedi_operazioneA(Id) :- 
+format('Ora il cliente con id ~d puo passare', Id), nl, 
+number_chars(Id, App), 
+atom_chars(IdString, App), 
+atom_concat('agentCliente', IdString, AgentName), 
+messageA(AgentName, send_message(fai_operazione, Me)).
+
+termino_operazioneE(Id, Biglietto) :> 
+retract(cliente_prenotato(Id,_,_)), 
+retract(operatore_libero(false)), 
+assertz(operatore_libero(true)),
+write('operatore libero').

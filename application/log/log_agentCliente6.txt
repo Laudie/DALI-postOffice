@@ -1,0 +1,2 @@
+send_message(send_message(chiedo_di_fare_operazione(6,11),_183631))
+send_message(send_message(termino_operazione(6,11),_144583))

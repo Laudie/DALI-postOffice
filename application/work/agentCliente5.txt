@@ -1,0 +1,15 @@
+:- write('Sono il cliente 5').
+
+:- dynamic biglietto/2.
+
+svegliaE(Id,Biglietto) :> assert(biglietto(Id,Biglietto)), once(messageOperatoreA).
+
+messageOperatoreA :> biglietto(Id,Biglietto), messageA(agentOperazioniVarie, send_message(chiedo_di_fare_operazione(Id,Biglietto),Me)).
+
+fai_operazioneE :- write('sto ritirando un pacco'), nl, operazione_terminataA.
+
+operazione_terminataA :- write('ho terminato'), nl, biglietto(Id,Biglietto),
+messageA(agentOperazioniVarie, send_message(termino_operazione(Id,Biglietto),Me)),
+retract(biglietto(Id,Biglietto)). 
+	
+	

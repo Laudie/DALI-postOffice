@@ -1,0 +1,37 @@
+:- use_module(library(aggregate)).
+:- use_module(library(lists)).
+
+:- dynamic(lista_biglietto/6).
+:- write('Sono la biglietteria').
+
+distribuisci_bigliettiE(Elem1, Elem2, Elem3, Elem4, Elem5, Elem6) :> 
+
+	assert(lista_biglietto(Elem1, Elem2, Elem3, Elem4, Elem5, Elem6)),
+	lista_biglietto(Elem1,Elem2, Elem3, Elem4, Elem5, Elem6),
+
+	format('Cliente 1 biglietto: ~d', Elem1), nl,
+	messageA(agentCliente1, send_message(sveglia(1, Elem1), Me)),
+
+	format('Cliente 2 biglietto: ~d', Elem2), nl,
+	messageA(agentCliente2, send_message(sveglia(2, Elem2), Me)),
+
+	format('Cliente 3 biglietto: ~d', Elem3), nl,
+	messageA(agentCliente3, send_message(sveglia(3, Elem3), Me)),
+
+	format('Cliente 4 biglietto: ~d', Elem4), nl,
+	messageA(agentCliente4, send_message(sveglia(4, Elem4), Me)),
+
+	format('Cliente 5 biglietto: ~d', Elem5), nl,
+	messageA(agentCliente5, send_message(sveglia(5, Elem5), Me)),
+
+	format('Cliente 6 biglietto: ~d', Elem6), nl,
+	messageA(agentCliente6, send_message(sveglia(6, Elem6), Me)),
+
+	retract(lista_biglietto(Elem1, Elem2, Elem3, Elem4, Elem5, Elem6)) .
+
+
+
+
+
+
+	
